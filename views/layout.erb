@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Tweet Streamer</title>
+		<link rel="stylesheet" href="/stylesheets/application.css" type="text/css" />
+		<!-- jquery -->
+		<script type="text/javascript" 
+		        src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js">
+		</script>
+		<!-- maps API -->
+		<script type="text/javascript" 
+		        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgWZrPdvmGArSeMUwG4C4EnBAaE-UaL6Y&sensor=false">
+    </script>
+		<script type="text/javascript">
+			var map;
+			<!-- put the map in place, with options given -->
+			function initialize() {
+	      var mapOptions = {
+	        center: new google.maps.LatLng(44.721735,-27.799806),
+	        zoom: 3,
+					disableDefaultUI: true,
+	        mapTypeId: google.maps.MapTypeId.SATELLITE
+	      };
+		    map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+	    };
+			<!-- markers  -->
+			function dropPin(lat,lang) {
+				var myLatlng = new google.maps.LatLng(lat,lang);
+				var marker = new google.maps.Marker({
+		      position: myLatlng,
+		      map: map,
+					animation: google.maps.Animation.DROP,
+		      title:"Hello World!"
+			  });
+			
+			  // var myContent = text;
+				var infowindow = new google.maps.InfoWindow({
+	        // content: myContent
+				});
+				google.maps.event.addListener(marker, 'click', function() {
+					infowindow.open(map,marker);
+				});
+			};
+			
+    </script>
+
+    <link href='http://fonts.googleapis.com/css?family=Sanchez:400italic,400' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300' rel='stylesheet' type='text/css'>
+		
+	</head>
+	
+	<body onload="initialize()">
+		<div id="fixed">
+			<div id="map_canvas"></div>
+		</div>
+		<div id="content">
+			<%= yield %>
+		</div>
+	</body>
+</html>

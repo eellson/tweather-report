@@ -1,0 +1,21 @@
+<script type="text/javascript">
+//<![CDATA[
+	function refreshTweets() {
+	  $.get('/latest', {since: window.latestTweet}, function(data) {
+	    $('.tweets').prepend(data);
+	    $('.latest').slideDown('slow');
+	    $('.tweets li:gt(50)').remove();
+      
+	    setTimeout(refreshTweets, 1000);
+	  });
+	}
+	$(function() {
+	  setTimeout(refreshTweets, 1000);
+	});
+//]]>
+</script>
+
+<h1>Tweather report</h1>
+<ul class="tweets">
+	<%= erb :tweets, :layout => false %>
+</ul>

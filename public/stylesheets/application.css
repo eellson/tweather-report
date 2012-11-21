@@ -1,0 +1,74 @@
+html {
+	height: 100%;
+}
+body {
+	background: black;
+	color: white;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+div#fixed {
+	position: fixed;
+	top: 0;
+	height: 100%;
+	width: 100%;
+}
+div#map_canvas {
+	top: 0;
+	height: 100%;
+	width: 100%;
+}
+div#content {
+	height: 10%;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.81);
+}
+h1 {
+	font-family: 'Sanchez', serif;
+	font-size: 3em;
+	margin: 0.2em 0em 0.1em 0.3em;
+	position: absolute;
+	float: left;
+	font-style: italic;
+	text-shadow: -2px -1px 8px #5648BE;
+}
+ul, p {
+	margin: 0;
+}
+ul.tweets {
+	height: 100%;
+	width: 70%;
+	position: absolute;
+	overflow: auto;
+	right:0;
+	float: right;
+	list-style: none;
+}
+li.tweet {
+	float: right;
+	height: 100%;
+	width: 40em;
+	padding: 1em 0 0 0;
+}
+img.avatar {
+	float: left;
+	margin: 0 1em 0 0;
+	vertical-align: middle;
+}
+p.text {
+	float: left;
+	display: inline;
+	width: 25em;
+	font-family: 'Open Sans', sans-serif;
+	text-shadow: -2px -1px 8px #5648BE;
+}
+div.details {
+	width: 7em;
+  float: right;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.7em;
+	text-shadow: -2px -1px 8px #5648BE;
+}
