@@ -18,6 +18,21 @@ div#map_canvas {
 	top: 0;
 	height: 100%;
 	width: 100%;
+  color: #000000;
+  font-family: 'Open Sans', sans-serif;
+}
+div#map_canvas li {
+	padding: 0.5em 0 0 0;
+}
+div#map_canvas p.text {
+	float: left;
+	display: inline;
+	width: 25em;
+	font-family: 'Open Sans', sans-serif;
+	text-shadow: none;
+}
+div#map_canvas div.details {
+	text-shadow: none;
 }
 div#content {
 	height: 10%;
@@ -52,13 +67,14 @@ li.tweet {
 	height: 100%;
 	width: 40em;
 	padding: 1em 0 0 0;
+	list-style: none;
 }
 img.avatar {
 	float: left;
 	margin: 0 1em 0 0;
 	vertical-align: middle;
 }
-p.text {
+div#content p.text {
 	float: left;
 	display: inline;
 	width: 25em;

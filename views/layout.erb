@@ -14,7 +14,7 @@
     </script>
 		<script type="text/javascript">
 			var map;
-			<!-- put the map in place, with options given -->
+			// put the map in place, with options given
 			function initialize() {
 	      var mapOptions = {
 	        center: new google.maps.LatLng(44.721735,-27.799806),
@@ -24,8 +24,15 @@
 	      };
 		    map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
 	    };
-			<!-- markers  -->
-			function dropPin(lat,lang) {
+			
+			// set infowindow outside of dropPin function so that only one exists, 
+			// and so only one is displayed at a time.
+			var infowindow = new google.maps.InfoWindow({
+        content: ''
+			});
+			
+			// markers
+			function dropPin(lat,lang,id) {
 				var myLatlng = new google.maps.LatLng(lat,lang);
 				var marker = new google.maps.Marker({
 		      position: myLatlng,
@@ -34,11 +41,10 @@
 		      title:"Hello World!"
 			  });
 			
-			  // var myContent = text;
-				var infowindow = new google.maps.InfoWindow({
-	        // content: myContent
-				});
+			  var myContent = document.getElementById(id);
+				
 				google.maps.event.addListener(marker, 'click', function() {
+					infowindow.setContent(myContent)
 					infowindow.open(map,marker);
 				});
 			};
