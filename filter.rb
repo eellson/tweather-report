@@ -8,7 +8,7 @@ WORDS = IO.read('weather_words.txt')
 
 TweetStream::Client.new.locations(-180,-90,180,90) do |status|
   # Ignore replies
-  if (status.text !~ /^@\w+/ && status.text =~ /\s+(#{WORDS})\s+/)
+  if (status.text !~ /^@\w+/ && status.text =~ /\s+(#{WORDS})\s+/i)
     STORE.push(
           'id' => status[:id],
           'text' => status.text,
@@ -19,7 +19,8 @@ TweetStream::Client.new.locations(-180,-90,180,90) do |status|
           'created_at' => status.created_at,
           'received_at' => Time.new.to_i,
           'place_name' => status.place.name,
-          'coordinates' => status.place.bounding_box.coordinates
+          'coordinates' => status.place.bounding_box.coordinates,
+          'country_code' => status.place.country_code
     )
   end
 end
