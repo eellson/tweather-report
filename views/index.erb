@@ -25,7 +25,10 @@
 //]]>
 </script>
 
-<h1>Tweather report</h1>
+<div class="site-description">
+	<h1>Tweather report</h1>
+	<%= erb :description, :layout => false %>
+</div>
 <ul class="counts">
   <%= erb :counts, :layout => false %>
 </ul>

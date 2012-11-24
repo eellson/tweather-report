@@ -22,7 +22,7 @@ div#map_canvas {
   font-family: 'Open Sans', sans-serif;
 }
 div#map_canvas li {
-	padding: 0.5em 0 0 0;
+	padding: 0 0 0 0;
 }
 div#map_canvas p.text {
 	float: left;
@@ -33,6 +33,8 @@ div#map_canvas p.text {
 }
 div#map_canvas div.details {
 	text-shadow: none;
+	position: absolute;
+	right: 0;
 }
 div#content {
 	height: 10%;
