@@ -9,13 +9,26 @@
 	    setTimeout(refreshTweets, 1000);
 	  });
 	}
+	function refreshCounts() {
+		$.get('/counts', {since: window.latestTweet}, function(data) {
+			$('.counts').prepend(data);
+			$('.count').slideDown('slow');
+			$('.counts li:gt(50)').remove();
+		
+			setTimeout(refreshCounts, 1000);
+	  });
+	};
 	$(function() {
 	  setTimeout(refreshTweets, 1000);
+		setTimeout(refreshCounts, 1000);
 	});
 //]]>
 </script>
 
 <h1>Tweather report</h1>
+<ul class="counts">
+  <%= erb :counts, :layout => false %>
+</ul>
 <ul class="tweets">
 	<%= erb :tweets, :layout => false %>
 </ul>

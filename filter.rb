@@ -1,10 +1,13 @@
 require 'tweetstream'
 
 require File.join(File.dirname(__FILE__), 'tweet_store')
+require File.join(File.dirname(__FILE__), 'tweet_count')
+
 load File.join(File.dirname(__FILE__), 'twitter_authentication.rb')
 
 STORE = TweetStore.new
 WORDS = IO.read('weather_words.txt')
+COUNT = TweetCount.new
 
 TweetStream::Client.new.locations(-180,-90,180,90) do |status|
   # Ignore replies
@@ -22,5 +25,10 @@ TweetStream::Client.new.locations(-180,-90,180,90) do |status|
           'coordinates' => status.place.bounding_box.coordinates,
           'country_code' => status.place.country_code
     )
+    if status.place.country_code == 'GB'
+      COUNT.incr_gb
+    else
+      COUNT.incr_row
+    end
   end
 end
