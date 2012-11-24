@@ -18,6 +18,11 @@
 			setTimeout(refreshCounts, 1000);
 	  });
 	};
+	$(".description").hover(function() {
+	        $(this).animate({ height: "59px"});
+	    }, function() {
+	        $(this).animate({ height: "100%" });
+	});​
 	$(function() {
 	  setTimeout(refreshTweets, 1000);
 		setTimeout(refreshCounts, 1000);

@@ -39,15 +39,33 @@ div#map_canvas div.details {
 div#content {
 	height: 10%;
 	width: 100%;
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	background: rgba(0, 0, 0, 0.81);
+}
+div#content div.site-description {
+	width: 27em;
+	position: absolute;
+	overflow: hidden;
+	height: 100%;
+	font-family: 'Open Sans', sans-serif;
+	margin: 0 0 0 1em;
+	-webkit-transition-property: height;
+  -webkit-transition-duration: 2s;
+	border-radius: 3px;
+}
+div#content div.site-description:hover {
+	height: 445%;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.81);
+}
+div#content div.site-description p.description {
+	margin: 1em 2em 2em 2em;
 }
 h1 {
 	font-family: 'Sanchez', serif;
 	font-size: 3em;
 	margin: 0.2em 0em 0.1em 0.3em;
-	float: left;
 	font-style: italic;
 	text-shadow: -2px -1px 8px #5648BE;
 }
@@ -57,7 +75,7 @@ ul, p {
 ul.counts {
 	height: 100%;
 	width: 17em;
-	float: left;
+	float:right;
 	overflow: auto;
 }
 li.count {
@@ -66,7 +84,7 @@ li.count {
 	width: 40em;
 	list-style: none;
   padding: 1em 0 0 0;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Sanchez', serif;
 
 }
 li.count img.flag {
@@ -77,18 +95,19 @@ li.count p {
 	margin: 0 2em 0 1em;
 }
 ul.tweets {
+	padding: 0 2em 0 0;
 	height: 100%;
 	width: 40em;
-	position: absolute;
+	float: right;
 	overflow: auto;
 	right:0;
-	float: right;
+	display: inline-block;
 	list-style: none;
 }
 li.tweet {
 	float: right;
 	height: 100%;
-	width: 40em;
+	width: 35em;
 	padding: 1em 0 0 0;
 	list-style: none;
 }
