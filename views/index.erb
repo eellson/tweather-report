@@ -13,7 +13,7 @@
 		$.get('/counts', {since: window.latestTweet}, function(data) {
 			$('.counts').prepend(data);
 			$('.count').slideDown('slow');
-			$('.counts li:gt(50)').remove();
+			$('.counts li:gt(5)').remove();
 		
 			setTimeout(refreshCounts, 1000);
 	  });
