@@ -45,6 +45,7 @@ div#content {
 }
 div#content div.site-description {
 	width: 27em;
+	bottom: 0;
 	position: absolute;
 	overflow: hidden;
 	height: 100%;
@@ -53,11 +54,11 @@ div#content div.site-description {
 	-webkit-transition-property: height;
   -webkit-transition-duration: 2s;
 	border-radius: 3px;
+	background: rgba(0, 0, 0, 0.81);
+	
 }
 div#content div.site-description:hover {
 	height: 510%;
-	bottom: 0;
-	background: rgba(0, 0, 0, 0.81);
 }
 div#content div.site-description p.description {
 	margin: 1em 2em 2em 2em;
