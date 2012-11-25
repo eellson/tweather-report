@@ -13,8 +13,7 @@ SENTIMENT_URI = URI('http://www.sentiment140.com/api/bulkClassifyJson?appid=eell
 REQ = Net::HTTP::Post.new(SENTIMENT_URI.path, initheader = {'Content-Type' =>'application/json'})
 
 TweetStream::Client.new.locations(-180,-90,180,90) do |status|
-  # Ignore replies
-  if (status.text !~ /^@\w+/ && status.text =~ /\s+(#{WORDS})\s+/i)
+  if status.text =~ /\s+(#{WORDS})\s+/i)
     STORE.push(
           'id' => status[:id],
           'text' => status.text,
