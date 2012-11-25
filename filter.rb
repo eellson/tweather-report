@@ -1,4 +1,5 @@
 require 'tweetstream'
+require 'net/http'
 
 require File.join(File.dirname(__FILE__), 'tweet_store')
 require File.join(File.dirname(__FILE__), 'tweet_count')
@@ -8,6 +9,8 @@ load File.join(File.dirname(__FILE__), 'twitter_authentication.rb')
 STORE = TweetStore.new
 WORDS = IO.read('weather_words.txt')
 COUNT = TweetCount.new
+SENTIMENT_URI = URI('http://www.sentiment140.com/api/bulkClassifyJson?appid=eellson@gmail.com')
+REQ = Net::HTTP::Post.new(SENTIMENT_URI.path, initheader = {'Content-Type' =>'application/json'})
 
 TweetStream::Client.new.locations(-180,-90,180,90) do |status|
   # Ignore replies
@@ -25,10 +28,16 @@ TweetStream::Client.new.locations(-180,-90,180,90) do |status|
           'coordinates' => status.place.bounding_box.coordinates,
           'country_code' => status.place.country_code
     )
+    REQ.body = {'data' => [{'text' => status.text}]}.to_json
+    
+    res = Net::HTTP.start(SENTIMENT_URI.hostname, SENTIMENT_URI.port) do |http|
+      http.request(REQ)
+    end
+    sentiment = JSON.parse(res.body)['data'][0]['polarity']
     if status.place.country_code == 'GB'
-      COUNT.incr_gb
+      COUNT.incr_gb(sentiment)
     else
-      COUNT.incr_row
+      COUNT.incr_row(sentiment)
     end
   end
 end

@@ -10,4 +10,4 @@ res = Net::HTTP.start(uri.hostname, uri.port) do |http|
   http.request(req)
 end
 
-puts res.body
+p JSON.parse(res.body)['data'][0]['polarity']
