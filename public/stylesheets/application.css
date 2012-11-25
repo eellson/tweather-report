@@ -55,7 +55,7 @@ div#content div.site-description {
 	border-radius: 3px;
 }
 div#content div.site-description:hover {
-	height: 445%;
+	height: 510%;
 	bottom: 0;
 	background: rgba(0, 0, 0, 0.81);
 }
