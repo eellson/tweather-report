@@ -6,21 +6,19 @@ class TweetCount
     @db = Redis.new
   end
   
-  def incr_gb(sentiment)
-    @db.incrby('GB', sentiment)
-    puts "GB count" + @db.get('GB')
+  def incr(location)
+    @db.incr(location)
   end
   
-  def incr_row(sentiment)
-    @db.incrby('ROW', sentiment)
-    puts "ROW count" + @db.get('ROW')
+  def incr_negative(location)
+    @db.incr(location + ' negative')
   end
   
-  def gb_count
-    @db.get('GB')
+  def count(location)
+    @db.get(location)
   end
   
-  def row_count
-    @db.get('ROW')
+  def negative_count(location)
+    @db.get(location + ' negative')
   end
 end

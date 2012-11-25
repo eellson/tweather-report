@@ -8,8 +8,10 @@ COUNT = TweetCount.new
 
 get '/' do
   @tweets = STORE.tweets
-  @gb_count = COUNT.gb_count
-  @row_count = COUNT.row_count
+  @gb_count = COUNT.count('GB')
+  @row_count = COUNT.count('ROW')
+  @negative_gb_count = COUNT.negative_count('GB')
+  @negative_row_count = COUNT.negative_count('ROW')
   erb :index
 end
 
@@ -25,8 +27,10 @@ get '/latest' do
 end
 
 get '/counts' do
-  @gb_count = COUNT.gb_count
+  @gb_count = COUNT.count('GB')
   puts "@gb_count " + @gb_count
-  @row_count = COUNT.row_count
+  @row_count = COUNT.count('ROW')
+  @negative_gb_count = COUNT.negative_count('GB')
+  @negative_row_count = COUNT.negative_count('ROW')
   erb :counts, :layout => false
 end
