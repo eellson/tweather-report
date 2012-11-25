@@ -21,4 +21,10 @@ class TweetCount
   def negative_count(location)
     @db.get(location + ' negative')
   end
+  
+  def ratio(location)
+    negative = self.negative_count(location).to_f
+    total = self.count(location).to_f
+    (negative / total).round(4)
+  end
 end

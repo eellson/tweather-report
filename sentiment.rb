@@ -1,3 +1,7 @@
+# This could work as a standalone for getting the sentiment of tweets with a 
+# bit of tweaking, but I'm unsure of how I'd use it from the rest of the app 
+# so for now this is unused.
+
 require 'json'
 require 'net/http'
 

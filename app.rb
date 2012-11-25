@@ -12,6 +12,8 @@ get '/' do
   @row_count = COUNT.count('ROW')
   @negative_gb_count = COUNT.negative_count('GB')
   @negative_row_count = COUNT.negative_count('ROW')
+  @gb_ratio = COUNT.ratio('GB')
+  @row_ratio = COUNT.ratio('ROW')
   erb :index
 end
 
@@ -28,9 +30,10 @@ end
 
 get '/counts' do
   @gb_count = COUNT.count('GB')
-  puts "@gb_count " + @gb_count
   @row_count = COUNT.count('ROW')
   @negative_gb_count = COUNT.negative_count('GB')
   @negative_row_count = COUNT.negative_count('ROW')
+  @gb_ratio = COUNT.ratio('GB')
+  @row_ratio = COUNT.ratio('ROW')
   erb :counts, :layout => false
 end
