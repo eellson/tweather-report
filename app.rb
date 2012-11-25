@@ -6,6 +6,13 @@ require File.join(File.dirname(__FILE__), 'tweet_count')
 STORE = TweetStore.new
 COUNT = TweetCount.new
 
+configure do
+  require 'redis'
+  redisUri = ENV["REDISTOGO_URL"] || 'redis://localhost:6379'
+  uri = URI.parse(redisUri) 
+  REDIS = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
+end
+
 get '/' do
   @tweets = STORE.tweets
   @gb_count = COUNT.count('GB')
