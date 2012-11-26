@@ -4,7 +4,7 @@
 		<!-- in geoJSON the longitude is before latitude -->
 			<img class="avatar" src="<%= tweet.profile_image_url %>" onload="dropPin(<%= tweet.coordinates[0][0][1] %>,<%= tweet.coordinates[0][0][0] %>,'<%= tweet.id %>')" />
 		</a>
-		<p class="text"><%= tweet.text %></p>
+		<p class="text"><%= tweet.filtered_text %></p>
 		<div class="details">
 			<p class="username"><%= tweet.username %></p>
 			<p class="place_name"><%= tweet.place_name %>
