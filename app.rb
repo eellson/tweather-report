@@ -6,13 +6,6 @@ require File.join(File.dirname(__FILE__), 'tweet_count')
 STORE = TweetStore.new
 COUNT = TweetCount.new
 
-configure do
-  require 'redis'
-  redisUri = ENV["REDISTOGO_URL"] || 'redis://localhost:6379'
-  uri = URI.parse(redisUri) 
-  REDIS = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
-end
-
 get '/' do
   @tweets = STORE.tweets
   @gb_count = COUNT.count('GB')
@@ -21,8 +14,8 @@ get '/' do
   @negative_row_count = COUNT.negative_count('ROW')
   @weather_gb_count = COUNT.weather_count('GB')
   @weather_row_count = COUNT.weather_count('ROW')
-  @gb_ratio = COUNT.ratio('GB')
-  @row_ratio = COUNT.ratio('ROW')
+  @gb_percentage = COUNT.percentage('GB')
+  @row_percentage = COUNT.percentage('ROW')
   erb :index
 end
 
@@ -44,7 +37,7 @@ get '/counts' do
   @negative_row_count = COUNT.negative_count('ROW')
   @weather_gb_count = COUNT.weather_count('GB')
   @weather_row_count = COUNT.weather_count('ROW')
-  @gb_ratio = COUNT.ratio('GB')
-  @row_ratio = COUNT.ratio('ROW')
+  @gb_percentage = COUNT.percentage('GB')
+  @row_percentage = COUNT.percentage('ROW')
   erb :counts, :layout => false
 end

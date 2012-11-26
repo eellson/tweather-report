@@ -3,20 +3,24 @@ require 'redis'
 require File.join(File.dirname(__FILE__), 'tweet')
 
 class TweetStore
+
+  redisUri = ENV["REDISTOGO_URL"] || 'redis://localhost:6379'
+  uri = URI.parse(redisUri) 
+  REDIS = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
+
   
   REDIS_KEY = 'tweets'
   NUM_TWEETS = 5
   MAX_SIZE = 50
   
   def initialize
-    @db = Redis.new
+    @db = REDIS
     @trim_count = 0
   end
   
   # Retrieves the specified number of tweets, but only if they are more recent
   # than the specified timestamp.
   def tweets(limit=15, since=0)
-    #  not sure about .collect...
     @db.lrange(REDIS_KEY, 0, limit - 1).collect {|t|
       Tweet.new(JSON.parse(t))
     }.reject {|t| t.received_at <= since}

@@ -28,10 +28,11 @@ div#map_canvas p.text {
 	float: left;
 	display: inline;
 	width: 25em;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Helvetica Neue', sans-serif;
 	text-shadow: none;
 }
 div#map_canvas div.details {
+	font-family: 'Helvetica Neue', sans-serif;
 	text-shadow: none;
 	position: absolute;
 	right: 0;
@@ -49,17 +50,16 @@ div#content div.site-description {
 	position: absolute;
 	overflow: hidden;
 	height: 100%;
-	font-family: 'Open Sans', sans-serif;
 	margin: 0 0 0 1em;
 	-webkit-transition-property: height;
   -webkit-transition-duration: 2s;
 	border-radius: 3px;
 	background: rgba(0, 0, 0, 0.81);
 	padding: 1em 0 0 0;
-	
+	font-family: 'Helvetica Neue', sans-serif;
 }
 div#content div.site-description:hover {
-	height: 560%;
+	height: 483%;
 }
 div#content div.site-description p.description {
 	margin: 1.2em 1.5em 0 2em;
@@ -116,6 +116,9 @@ li.count p.row {
 	background-image: url('/images/Lime.png');
 	background-repeat: no-repeat;
 }
+li.count p.ratio {
+	font-weight: 600;
+}
 li.count p.label {
 	font-size: 0.8em;
 	padding: 0.5em 0em 0em 0.5em;
@@ -139,20 +142,24 @@ li.tweet {
 }
 img.avatar {
 	float: left;
-	margin: 0 1em 0 0;
+	/* Pixel measurement below so the image lines up with text */
+	margin: 4px 1em 0 0; 
 	vertical-align: middle;
 }
 div#content p.text {
 	float: left;
 	display: inline;
 	width: 25em;
-	font-family: 'Open Sans', sans-serif;
-	text-shadow: -2px -1px 8px #5648BE;
+	font-family: 'Helvetica Neue', sans-serif;
+	text-shadow: none;
+	font-weight: 500;
 }
 div.details {
 	width: 7em;
   float: right;
-  font-family: 'Open Sans', sans-serif;
+	font-family: 'Helvetica Neue', sans-serif;
+	text-shadow: none;
   font-size: 0.7em;
-	text-shadow: -2px -1px 8px #5648BE;
+	font-weight: 500;
+
 }
