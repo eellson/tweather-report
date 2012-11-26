@@ -13,8 +13,12 @@ COUNT = TweetCount.new
 SENTIMENT_URI = URI('http://www.sentiment140.com/api/bulkClassifyJson?appid=eellson@gmail.com')
 REQ = Net::HTTP::Post.new(SENTIMENT_URI.path, initheader = {'Content-Type' =>'application/json'})
 
-TweetStream::Client.new.locations(-180,-90,180,90) do |status|
-  
+TweetStream::Client.new.on_limit {|skip_count|
+  puts "hey!"
+  }.on_enhance_your_calm {
+  puts "calm"
+  }.locations(-180,-90,180,90) do |status|
+  puts "yay!"
   # tally tweets for GB and ROW
   if status.place.country_code == 'GB'
     COUNT.incr('GB')
