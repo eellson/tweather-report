@@ -15,9 +15,9 @@ REQ = Net::HTTP::Post.new(SENTIMENT_URI.path, initheader = {'Content-Type' =>'ap
 
 TweetStream::Client.new.on_limit {|skip_count|
   puts "hey!"
-  }.on_enhance_your_calm {
+}.on_enhance_your_calm {
   puts "calm"
-  }.locations(-180,-90,180,90) do |status|
+}.locations(-180,-90,180,90) do |status|
   puts "yay!"
   # tally tweets for GB and ROW
   if status.place.country_code == 'GB'
@@ -25,7 +25,7 @@ TweetStream::Client.new.on_limit {|skip_count|
   else
     COUNT.incr('ROW')
   end
-  
+
   # put tweets about the weather in the tweet store
   if status.text =~ /\s+(#{WORDS})\s+/i
     STORE.push(
@@ -38,21 +38,21 @@ TweetStream::Client.new.on_limit {|skip_count|
           'coordinates' => status.place.bounding_box.coordinates,
           'country_code' => status.place.country_code
     )
-    
+  
     # tally weather related tweets
     if status.place.country_code == 'GB'
       COUNT.incr_weather('GB')
     else
       COUNT.incr_weather('ROW')
     end
-    
+  
     # get sentiment of weather related tweets
     REQ.body = {'data' => [{'text' => status.text}]}.to_json
     res = Net::HTTP.start(SENTIMENT_URI.hostname, SENTIMENT_URI.port) do |http|
       http.request(REQ)
     end
     sentiment = JSON.parse(res.body)['data'][0]['polarity']
-    
+  
     # if tweet has negative sentiment increase negative tally for GB or ROW
     if sentiment == 0
       if status.place.country_code == 'GB'
