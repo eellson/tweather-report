@@ -1,5 +1,6 @@
 require 'tweetstream'
 require 'net/http'
+require 'json'
 
 require File.join(File.dirname(__FILE__), 'tweet_store')
 require File.join(File.dirname(__FILE__), 'tweet_count')
