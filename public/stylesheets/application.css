@@ -2,113 +2,116 @@ html {
 	height: 100%;
 }
 body {
-	background: black;
-	color: white;
 	height: 100%;
 	margin: 0;
 	padding: 0;
+	background: black;
+	color: white;
 }
+h1 {
+	margin: 0 0 0.1em 0.3em;
+	text-shadow: -2px -1px 8px #5648BE;
+	font-family: 'Sanchez', serif;
+	font-size: 3em;
+	font-style: italic;
+	font-weight: 400;
+}
+ul, p {
+	margin: 0;
+}
+
+/* Map Styles */
+
+/* This is simply a wrapper for the map, in which can't be given position fixed. */
 div#fixed {
+	height: 100%;
 	position: fixed;
 	top: 0;
-	height: 100%;
 	width: 100%;
 }
 div#map_canvas {
 	top: 0;
 	height: 100%;
 	width: 100%;
-  color: #000000;
-  font-family: 'Open Sans', sans-serif;
+	color: #1B1B1B;
+	font-family: 'Helvetica Neue', sans-serif;
+	font-weight: 400;
+	text-shadow: none;
 }
 div#map_canvas li {
 	padding: 0 0 0 0;
 }
-div#map_canvas p.text {
-	float: left;
-	display: inline;
-	width: 25em;
-	font-family: 'Helvetica Neue', sans-serif;
-	text-shadow: none;
-}
-div#map_canvas div.details {
-	font-family: 'Helvetica Neue', sans-serif;
-	text-shadow: none;
-	position: absolute;
-	right: 0;
-}
-div#content {
-	height: 10%;
-	width: 100%;
-	position: fixed;
+
+/* Footer Styles */
+
+div#footer {
 	bottom: 0;
+	height: 10%;
+	position: fixed;
+	width: 100%;
 	background: rgba(0, 0, 0, 0.81);
 }
-div#content div.site-description {
-	width: 26em;
+
+/* Site Description Styles */
+
+div#footer div.site-description {
 	bottom: 0;
-	position: absolute;
-	overflow: hidden;
 	height: 100%;
 	margin: 0 0 0 1em;
+	padding: 1em 0 0 0;
+	position: absolute;
+	width: 26em;
+	background: rgba(0, 0, 0, 0.81);
+	border-radius: 3px;
+	font-family: 'Helvetica Neue', sans-serif;
+	overflow: hidden;
 	-webkit-transition-property: height;
   -webkit-transition-duration: 2s;
-	border-radius: 3px;
-	background: rgba(0, 0, 0, 0.81);
-	padding: 1em 0 0 0;
-	font-family: 'Helvetica Neue', sans-serif;
 }
-div#content div.site-description:hover {
+div#footer div.site-description:hover {
 	height: 483%;
 }
-div#content div.site-description p.description {
+div#footer div.site-description p.description {
 	margin: 1.2em 1.5em 0 2em;
 }
-h1 {
-	font-family: 'Sanchez', serif;
-	font-size: 3em;
-	font-weight: 400;
-	margin: 0 0 0.1em 0.3em;
-	font-style: italic;
-	text-shadow: -2px -1px 8px #5648BE;
-}
-ul, p {
-	margin: 0;
-}
+
+/* Tweet Counts Styles */
+
 ul.counts {
-	list-style: none;
-	height: 100%;
-	width: 19em;
-	overflow: hidden;
 	bottom: 0;
-	right: 0;
+	height: 100%;
+	margin: 0em 0.5em 0em 0;
+	padding: 1em 0 0 0.5em;
 	position: absolute;
+	right: 0;
+	width: 19em;
 	background: rgba(0, 0, 0, 0.81);
+	border-radius: 3px;
+	list-style: none;
+	overflow: hidden;
 	-webkit-transition-property: height;
   -webkit-transition-duration: 2s;
-	border-radius: 3px;
-	padding: 1em 0 0 0.5em;
-	margin: 0em 0.5em 0em 0;
 }
 ul.counts:hover {
 	height: 420%;
 }
 li.count {
 	float: left;
-	width: 20em;
-	list-style: none;
-	padding: 0 0 0 0;
-	font-family: 'Sanchez', serif;
 	margin: 0 0 0.5em 0;
+	padding: 0 0 0 0;
+	width: 20em;
+	font-family: 'Sanchez', serif;
+	list-style: none;
 }
 li.count p {
 	display: inline-block;
+	height: 1em;
 	margin: 0 1em 0 1em;
 	padding: 1em 0em 1em 4em;
-	height: 1em;
 	width: 3em;
 }
 li.count p.uk {
+	/* Flag image adapted from https://www.gosquared.com/resources/flag-icons	*/
 	background-image: url('/images/United-Kingdom.png');
 	background-repeat: no-repeat;
 }
@@ -120,33 +123,33 @@ li.count p.ratio {
 	font-weight: 600;
 }
 li.count p.label {
-	font-size: 0.8em;
 	padding: 0.5em 0em 0em 0.5em;
 	width: 21em;
+	font-size: 0.8em;
 }
+
+/* Footer Tweet List Styles */
+
 ul.tweets {
-	padding: 0 2em 0 0;
-	margin: 0 0 0 26em;
-	height: 100%;
-	width: 40em;
-	overflow: auto;
 	display: inline-block;
+	height: 100%;
+	margin: 0 0 0 26em;
+	padding: 0 2em 0 0;
+	width: 40em;
 	list-style: none;
+	overflow: auto;
 }
+
+/* Tweet Styles */
+
 li.tweet {
 	float: right;
 	height: 100%;
-	width: 35em;
 	padding: 1em 0 0 0;
+	width: 35em;
 	list-style: none;
 }
-img.avatar {
-	float: left;
-	/* Pixel measurement below so the image lines up with text */
-	margin: 4px 1em 0 0; 
-	vertical-align: middle;
-}
-div#content p.text {
+p.text {
 	float: left;
 	display: inline;
 	width: 25em;
@@ -155,11 +158,23 @@ div#content p.text {
 	font-weight: 500;
 }
 div.details {
+	float: right;
 	width: 7em;
-  float: right;
 	font-family: 'Helvetica Neue', sans-serif;
-	text-shadow: none;
   font-size: 0.7em;
 	font-weight: 500;
+	text-shadow: none;
+}
+img.avatar {
+	float: left;
+	/* Pixel measurement below so the image lines up with text */
+	margin: 4px 1em 0 0; 
+	vertical-align: middle;
+}
 
+/* infoWindow Styles */
+
+div#map_canvas div.details {
+	position: absolute;
+	right: 0;
 }
