@@ -29,7 +29,6 @@ class TweetStore
   def push(data)
     @db.lpush(REDIS_KEY, data.to_json)
     @trim_count += 1
-    puts @db.llen(REDIS_KEY)
     if (@trim_count > MAX_SIZE)
       # Periodically trim the list so it doesn't grow too large.
       @db.ltrim(REDIS_KEY, 0, NUM_TWEETS)

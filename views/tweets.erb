@@ -2,7 +2,9 @@
 	<li class="tweet <%= @tweet_class %>" id="<%= tweet.id %>">
 		<a href="<%= tweet.user_link %>">
 		<!-- in geoJSON the longitude is before latitude -->
-			<img class="avatar" src="<%= tweet.profile_image_url %>" onload="dropPin(<%= tweet.coordinates[0][0][1] %>,<%= tweet.coordinates[0][0][0] %>,'<%= tweet.id %>')" />
+			<img class="avatar" 
+			     src="<%= tweet.profile_image_url %>" 
+			     onload="dropPin(<%= tweet.coordinates[0][0][1] %>,<%= tweet.coordinates[0][0][0] %>,'<%= tweet.id %>')" />
 		</a>
 		<p class="text"><%= tweet.filtered_text %></p>
 		<div class="details">
