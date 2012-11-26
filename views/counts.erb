@@ -1,17 +1,21 @@
 <!-- Flag images from https://www.gosquared.com/resources/flag-icons -->
 <li class="count">
-	<img class="flag" src="images/United-Kingdom.png">
-	<p><%= @gb_ratio %></p>
-	<img class="flag" src="images/Lime.png">
-	<p><%= @row_ratio %></p>
+	<p class="ratio uk"><%= @gb_ratio %></p>
+	<p class="ratio row"><%= @row_ratio %></p>
+	<p class="label">Moaning about the weather / total tweets</p>
 </li>
-<li class-"count">
-	<p>Total Tweets</p>
-	<p><%= @gb_count %></p>
-	<p><%= @row_count %></p>
+<li class="count">
+	<p class="negative uk"><%= @negative_gb_count %></p>
+	<p class="negative row"><%= @negative_row_count %></p>
+	<p class="label">Tweets moaning about the weather</p>
 </li>
-<li class-"count">
-	<p>Negative Tweets</p>
-	<p><%= @negative_gb_count %></p>
-	<p><%= @negative_row_count %></p>
+<li class="count">
+	<p class="weather uk"><%= @weather_gb_count %></p>
+	<p class="negative row"><%= @weather_row_count %></p>
+	<p class="label">Tweets about the weather</p>
+</li>
+<li class="count">
+	<p class="total uk"><%= @gb_count %></p>
+	<p class="total row"><%= @row_count %></p>
+	<p class="label">Total Tweets</p>
 </li>

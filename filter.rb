@@ -37,6 +37,13 @@ TweetStream::Client.new.locations(-180,-90,180,90) do |status|
           'country_code' => status.place.country_code
     )
     
+    # tally weather related tweets
+    if status.place.country_code == 'GB'
+      COUNT.incr_weather('GB')
+    else
+      COUNT.incr_weather('ROW')
+    end
+    
     # get sentiment of weather related tweets
     REQ.body = {'data' => [{'text' => status.text}]}.to_json
     res = Net::HTTP.start(SENTIMENT_URI.hostname, SENTIMENT_URI.port) do |http|

@@ -44,7 +44,7 @@ div#content {
 	background: rgba(0, 0, 0, 0.81);
 }
 div#content div.site-description {
-	width: 27em;
+	width: 26em;
 	bottom: 0;
 	position: absolute;
 	overflow: hidden;
@@ -55,18 +55,20 @@ div#content div.site-description {
   -webkit-transition-duration: 2s;
 	border-radius: 3px;
 	background: rgba(0, 0, 0, 0.81);
+	padding: 1em 0 0 0;
 	
 }
 div#content div.site-description:hover {
-	height: 552%;
+	height: 560%;
 }
 div#content div.site-description p.description {
-	margin: 1em 2em 2em 2em;
+	margin: 1.2em 1.5em 0 2em;
 }
 h1 {
 	font-family: 'Sanchez', serif;
 	font-size: 3em;
-	margin: 0.2em 0em 0.1em 0.3em;
+	font-weight: 400;
+	margin: 0 0 0.1em 0.3em;
 	font-style: italic;
 	text-shadow: -2px -1px 8px #5648BE;
 }
@@ -74,34 +76,57 @@ ul, p {
 	margin: 0;
 }
 ul.counts {
+	list-style: none;
 	height: 100%;
-	width: 17em;
-	float:right;
-	overflow: auto;
+	width: 19em;
+	overflow: hidden;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	background: rgba(0, 0, 0, 0.81);
+	-webkit-transition-property: height;
+  -webkit-transition-duration: 2s;
+	border-radius: 3px;
+	padding: 1em 0 0 0.5em;
+	margin: 0em 0.5em 0em 0;
+}
+ul.counts:hover {
+	height: 400%;
 }
 li.count {
 	float: left;
-	height: 100%;
-	width: 40em;
+	width: 20em;
 	list-style: none;
-  padding: 1em 0 0 0;
+	padding: 0 0 0 0;
 	font-family: 'Sanchez', serif;
-
-}
-li.count img.flag {
-	vertical-align: middle;
+	margin: 0 0 0.5em 0;
 }
 li.count p {
 	display: inline-block;
-	margin: 0 2em 0 1em;
+	margin: 0 1em 0 1em;
+	padding: 1em 0em 1em 4em;
+	height: 1em;
+	width: 3em;
+}
+li.count p.uk {
+	background-image: url('/images/United-Kingdom.png');
+	background-repeat: no-repeat;
+}
+li.count p.row {
+	background-image: url('/images/Lime.png');
+	background-repeat: no-repeat;
+}
+li.count p.label {
+	font-size: 0.8em;
+	padding: 0.5em 0em 0em 0.5em;
+	width: 21em;
 }
 ul.tweets {
 	padding: 0 2em 0 0;
+	margin: 0 0 0 26em;
 	height: 100%;
 	width: 40em;
-	float: right;
 	overflow: auto;
-	right:0;
 	display: inline-block;
 	list-style: none;
 }

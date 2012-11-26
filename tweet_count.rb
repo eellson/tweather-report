@@ -10,12 +10,20 @@ class TweetCount
     @db.incr(location)
   end
   
+  def incr_weather(location)
+    @db.incr(location + ' weather')
+  end
+  
   def incr_negative(location)
     @db.incr(location + ' negative')
   end
   
   def count(location)
     @db.get(location)
+  end
+  
+  def weather_count(location)
+    @db.get(location + ' weather')
   end
   
   def negative_count(location)
@@ -27,4 +35,6 @@ class TweetCount
     total = self.count(location).to_f
     (negative / total).round(4)
   end
+  
+  
 end

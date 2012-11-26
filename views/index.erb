@@ -13,7 +13,7 @@
 		$.get('/counts', {since: window.latestTweet}, function(data) {
 			$('.counts').prepend(data);
 			$('.count').slideDown('slow');
-			$('.counts li:gt(5)').remove();
+			$('.counts li:gt(3)').remove();
 		
 			setTimeout(refreshCounts, 1000);
 	  });
@@ -28,9 +28,9 @@
 <div class="site-description">
 	<%= erb :description, :layout => false %>
 </div>
-<ul class="counts">
-  <%= erb :counts, :layout => false %>
-</ul>
 <ul class="tweets">
 	<%= erb :tweets, :layout => false %>
+</ul>
+<ul class="counts">
+  <%= erb :counts, :layout => false %>
 </ul>

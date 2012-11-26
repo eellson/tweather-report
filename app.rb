@@ -19,6 +19,8 @@ get '/' do
   @row_count = COUNT.count('ROW')
   @negative_gb_count = COUNT.negative_count('GB')
   @negative_row_count = COUNT.negative_count('ROW')
+  @weather_gb_count = COUNT.weather_count('GB')
+  @weather_row_count = COUNT.weather_count('ROW')
   @gb_ratio = COUNT.ratio('GB')
   @row_ratio = COUNT.ratio('ROW')
   erb :index
@@ -40,6 +42,8 @@ get '/counts' do
   @row_count = COUNT.count('ROW')
   @negative_gb_count = COUNT.negative_count('GB')
   @negative_row_count = COUNT.negative_count('ROW')
+  @weather_gb_count = COUNT.weather_count('GB')
+  @weather_row_count = COUNT.weather_count('ROW')
   @gb_ratio = COUNT.ratio('GB')
   @row_ratio = COUNT.ratio('ROW')
   erb :counts, :layout => false
