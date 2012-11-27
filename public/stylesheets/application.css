@@ -96,7 +96,7 @@ ul.counts {
 	-webkit-transition: height 2s, background 3.5s;
 }
 ul.counts:hover {
-	height: 456%;
+	height: 436%;
 	background: rgba(30, 30, 36, 0.93);
 	-webkit-transition: height 1s, background 0.2s;
 }
@@ -110,7 +110,7 @@ li.count {
 }
 li.count p {
 	display: inline-block;
-	height: 1em;
+	height: 0.5em;
 	margin: 0 1em 0 1em;
 	padding: 1em 0 1em 4em;
 	width: 3em;
@@ -128,6 +128,7 @@ li.count p.ratio {
 	font-weight: 600;
 }
 li.count p.label {
+	height: 1em;
 	padding: 0 0 0 0.5em;
 	width: 21em;
 	font-size: 0.8em;
