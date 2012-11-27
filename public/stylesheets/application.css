@@ -9,12 +9,13 @@ body {
 	color: white;
 }
 h1 {
-	margin: 0 0 0.1em 0.3em;
-	text-shadow: -2px -1px 8px #5648BE;
+	margin: 0.2em 0 0.1em 0.3em;
+  text-shadow: -1px -1px 0px #747474;
 	font-family: 'Sanchez', serif;
 	font-size: 3em;
 	font-style: italic;
 	font-weight: 400;
+	background: transparent;
 }
 ul, p {
 	margin: 0;
@@ -49,7 +50,7 @@ div#footer {
 	height: 10%;
 	position: fixed;
 	width: 100%;
-	background: rgba(0, 0, 0, 0.81);
+	background: rgba(30, 30, 36, 0.83);
 }
 
 /* Site Description Styles */
@@ -58,21 +59,25 @@ div#footer div.site-description {
 	bottom: 0;
 	height: 100%;
 	margin: 0 0 0 1em;
-	padding: 1em 0 0 0;
+	padding: 0 0 0 0;
 	position: absolute;
 	width: 26em;
-	background: rgba(0, 0, 0, 0.81);
 	border-radius: 3px;
 	font-family: 'Helvetica Neue', sans-serif;
 	overflow: hidden;
-	-webkit-transition-property: height;
-  -webkit-transition-duration: 2s;
+	-webkit-transition: height 2s, background 3.5s;
+
 }
 div#footer div.site-description:hover {
 	height: 483%;
+	background: rgba(30, 30, 36, 0.93);
+	-webkit-transition: height 1s, background 0.2s;
+	
+	
 }
 div#footer div.site-description p.description {
 	margin: 1.2em 1.5em 0 2em;
+	background: -1px -1px 0px #AFAFAF;
 }
 
 /* Tweet Counts Styles */
@@ -81,23 +86,23 @@ ul.counts {
 	bottom: 0;
 	height: 100%;
 	margin: 0em 0.5em 0em 0;
-	padding: 1em 0 0 0.5em;
+	padding: 0 0 0 0.5em;
 	position: absolute;
 	right: 0;
 	width: 19em;
-	background: rgba(0, 0, 0, 0.81);
 	border-radius: 3px;
 	list-style: none;
 	overflow: hidden;
-	-webkit-transition-property: height;
-  -webkit-transition-duration: 2s;
+	-webkit-transition: height 2s, background 3.5s;
 }
 ul.counts:hover {
-	height: 420%;
+	height: 456%;
+	background: rgba(30, 30, 36, 0.93);
+	-webkit-transition: height 1s, background 0.2s;
 }
 li.count {
 	float: left;
-	margin: 0 0 0.5em 0;
+	margin: 0.8em 0 0.5em 0;
 	padding: 0 0 0 0;
 	width: 20em;
 	font-family: 'Sanchez', serif;
@@ -107,7 +112,7 @@ li.count p {
 	display: inline-block;
 	height: 1em;
 	margin: 0 1em 0 1em;
-	padding: 1em 0em 1em 4em;
+	padding: 1em 0 1em 4em;
 	width: 3em;
 }
 li.count p.uk {
@@ -123,7 +128,7 @@ li.count p.ratio {
 	font-weight: 600;
 }
 li.count p.label {
-	padding: 0.5em 0em 0em 0.5em;
+	padding: 0 0 0 0.5em;
 	width: 21em;
 	font-size: 0.8em;
 }
