@@ -16,7 +16,7 @@ REQ = Net::HTTP::Post.new(SENTIMENT_URI.path, initheader = {'Content-Type' =>'ap
 TweetStream::Client.new.on_limit {|skip_count|
   puts "hey!"
 }.on_enhance_your_calm {
-  puts "calm"
+  puts "calm " + Time.now.to_s
 }.locations(-180,-90,180,90) do |status|
   puts "yay!"
   # tally tweets for GB and ROW
