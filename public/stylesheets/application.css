@@ -54,6 +54,7 @@ div#footer {
 	position: fixed;
 	width: 100%;
 	background: rgba(30, 30, 36, 0.83);
+  display: none;
 }
 
 /* Splash styles */
@@ -90,7 +91,7 @@ div#splash p.description {
 	font-size: 1.2em;
 }
 
-/* Site Description Styles */
+/* Footer Description Styles */
 
 div#footer div.site-description {
 	bottom: 0;
@@ -105,7 +106,7 @@ div#footer div.site-description {
 	-webkit-transition: height 2s, background 3.5s;
 }
 div#footer div.site-description:hover {
-	height: 483%;
+	height: 590%;
 	background: rgba(30, 30, 36, 0.93);
 	-webkit-transition: height 1s, background 0.2s;
 }
