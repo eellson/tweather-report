@@ -104,11 +104,15 @@ div#footer div.site-description {
 	font-family: 'Helvetica Neue', sans-serif;
 	overflow: hidden;
 	-webkit-transition: height 2s, background 3.5s;
+	-moz-transition: height 2s, background 3.5s;
+	transition: height 2s, background 3.5s;
 }
 div#footer div.site-description:hover {
-	height: 590%;
+	height: 610%;
 	background: rgba(30, 30, 36, 0.93);
 	-webkit-transition: height 1s, background 0.2s;
+	-moz-transition: height 1s, background 0.2s;
+	transition: height 1s, background 0.2s;
 }
 div#footer div.site-description a#hide {
 	display: none;
@@ -132,11 +136,15 @@ ul.counts {
 	list-style: none;
 	overflow: hidden;
 	-webkit-transition: height 2s, background 3.5s;
+	-moz-transition: height 2s, background 3.5s;
+	transition: height 2s, background 3.5s;
 }
 ul.counts:hover {
 	height: 436%;
 	background: rgba(30, 30, 36, 0.93);
 	-webkit-transition: height 1s, background 0.2s;
+	-moz-transition: height 1s, background 0.2s;
+	transition: height 1s, background 0.2s;
 }
 li.count {
 	float: left;
