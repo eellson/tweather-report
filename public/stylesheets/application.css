@@ -20,6 +20,9 @@ h1 {
 ul, p {
 	margin: 0;
 }
+a {
+	color: #7F7FA2;
+}
 
 /* Map Styles */
 
@@ -53,6 +56,40 @@ div#footer {
 	background: rgba(30, 30, 36, 0.83);
 }
 
+/* Splash styles */
+
+div#splash {
+	position: absolute;
+	z-index: 3;
+	left: 50%;
+  top: 19%;
+  margin: 0 0 0 -25%;
+	padding: 1em 2em 2em;
+	width: 45%;
+  height: auto;
+	border-radius: 7px;
+	font-family: 'Helvetica Neue', sans-serif;
+	background: rgba(30, 30, 36, 0.93);
+}
+div#splash h1 {
+	margin: 0;
+}
+div#splash a#hide {
+	position: absolute;
+	top: 3em;
+	right: 2em;
+	font-family: 'Sanchez', serif;
+	font-weight: 600;
+	color: white;
+	text-decoration: none;
+	font-size: 1em;
+}
+div#splash p.description {
+	margin: 1.2em 0 0 0;
+	font-weight: 300;
+	font-size: 1.2em;
+}
+
 /* Site Description Styles */
 
 div#footer div.site-description {
@@ -66,14 +103,14 @@ div#footer div.site-description {
 	font-family: 'Helvetica Neue', sans-serif;
 	overflow: hidden;
 	-webkit-transition: height 2s, background 3.5s;
-
 }
 div#footer div.site-description:hover {
 	height: 483%;
 	background: rgba(30, 30, 36, 0.93);
 	-webkit-transition: height 1s, background 0.2s;
-	
-	
+}
+div#footer div.site-description a#hide {
+	display: none;
 }
 div#footer div.site-description p.description {
 	margin: 1.2em 1.5em 0 2em;
@@ -161,14 +198,14 @@ p.text {
 	width: 25em;
 	font-family: 'Helvetica Neue', sans-serif;
 	text-shadow: none;
-	font-weight: 500;
+	font-weight: 400;
 }
 div.details {
 	float: right;
 	width: 7em;
 	font-family: 'Helvetica Neue', sans-serif;
   font-size: 0.7em;
-	font-weight: 500;
+	font-weight: 400;
 	text-shadow: none;
 }
 img.avatar {
