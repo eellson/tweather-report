@@ -16,6 +16,7 @@ body {
 	padding: 0;
 	background: black;
 	color: white;
+	line-height: 1.3;
 }
 h1, h2, h3, h4, h5, h6, p { 
 	font-weight : normal;
@@ -207,7 +208,8 @@ ul.tweets {
 	padding: 0 2em 0 0;
 	width: 40em;
 	list-style: none;
-	overflow: auto;
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 
 /* Tweet Styles */
@@ -254,4 +256,8 @@ img.avatar {
 div#map_canvas div.details {
 	position: absolute;
 	right: 0;
+}
+div#map_canvas p.text {
+	background: rgba(93, 112, 189, 0.25);
+	box-shadow: inset 1px 1px 0px rgba(145, 145, 145, 0.77);
 }
