@@ -255,7 +255,7 @@ img.avatar {
 
 div#map_canvas div.details {
 	position: absolute;
-	right: 0;
+	right: 1em;
 }
 div#map_canvas p.text {
 	background: rgba(93, 112, 189, 0.25);
