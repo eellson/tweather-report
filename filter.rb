@@ -5,14 +5,19 @@ require 'json'
 require File.join(File.dirname(__FILE__), 'tweet_store')
 require File.join(File.dirname(__FILE__), 'tweet_count')
 
-load File.join(File.dirname(__FILE__), 'twitter_authentication.rb')
-
 STORE = TweetStore.new
 WORDS = IO.read('weather_words.txt')
 COUNT = TweetCount.new
 SENTIMENT_URI = URI('http://www.sentiment140.com/api/bulkClassifyJson?appid=eellson@gmail.com')
 REQ = Net::HTTP::Post.new(SENTIMENT_URI.path, initheader = {'Content-Type' =>'application/json'})
 
+TweetStream.configure do |config|
+ config.consumer_key       = ENV['CONSUMER_KEY']
+ config.consumer_secret    = ENV['CONSUMER_SECRET']
+ config.oauth_token        = ENV['OAUTH_TOKEN']
+ config.oauth_token_secret = ENV['OAUTH_TOKEN_SECRET']
+ config.auth_method        = :oauth
+end
 
 # These puts are for debugging really, but as they are super handy I have left 
 # them in for now.
