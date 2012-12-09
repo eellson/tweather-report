@@ -17,8 +17,14 @@
 	      var mapOptions = {
 	        center: new google.maps.LatLng(44.721735,-27.799806),
 	        zoom: 3,
-					disableDefaultUI: true,
-	        mapTypeId: google.maps.MapTypeId.SATELLITE
+					disableDefaultUI: false,
+	        mapTypeId: google.maps.MapTypeId.SATELLITE,
+					panControl: false,
+				  zoomControl: true,
+				  mapTypeControl: false,
+				  scaleControl: false,
+				  streetViewControl: false,
+				  overviewMapControl: false
 	      };
 		    map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
 	    };
@@ -57,6 +63,9 @@
 			<div id="splash">
 				<%= erb :description, :layout => false %>
 			</div>
+			<ul class="counts">
+			  <%= erb :counts, :layout => false %>
+			</ul>
 			<div id="map_canvas"></div>
 		</div>
 		<div id="footer">
