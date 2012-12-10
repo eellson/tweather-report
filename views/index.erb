@@ -1,33 +1,33 @@
 <script type="text/javascript">
 //<![CDATA[
-	function refreshTweets() {
-	  $.get('/latest', {since: window.latestTweet}, function(data) {
-	    $('.tweets').prepend(data);
-	    $('.latest').show('slide', {direction: 'right'}, 20000);
-	    $('.tweets li:gt(50)').remove();
+  function refreshTweets() {
+    $.get('/latest', {since: window.latestTweet}, function(data) {
+      $('.tweets').prepend(data);
+      $('.latest').show('slide', {direction: 'right'}, 20000);
+      $('.tweets li:gt(50)').remove();
       
-	    setTimeout(refreshTweets, 1000);
-	  });
-	}
-	function refreshCounts() {
-		$.get('/counts', {since: window.latestTweet}, function(data) {
-			$('.counts').prepend(data);
-			$('.count').slideDown('slow');
-			$('.counts li:gt(3)').remove();
-		
-			setTimeout(refreshCounts, 1000);
-	  });
-	};
-	$(function() {
-	  setTimeout(refreshTweets, 1000);
-		setTimeout(refreshCounts, 1000);
-	});
+      setTimeout(refreshTweets, 1000);
+    });
+  }
+  function refreshCounts() {
+    $.get('/counts', {since: window.latestTweet}, function(data) {
+      $('.counts').prepend(data);
+      $('.count').slideDown('slow');
+      $('.counts li:gt(3)').remove();
+    
+      setTimeout(refreshCounts, 1000);
+    });
+  };
+  $(function() {
+    setTimeout(refreshTweets, 1000);
+    setTimeout(refreshCounts, 1000);
+  });
 //]]>
 </script>
 
 <div class="site-description">
-	<%= erb :description, :layout => false %>
+  <%= erb :description, :layout => false %>
 </div>
 <ul class="tweets">
-	<%= erb :tweets, :layout => false %>
+  <%= erb :tweets, :layout => false %>
 </ul>

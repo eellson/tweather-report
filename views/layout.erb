@@ -1,75 +1,75 @@
 <!DOCTYPE html>
 
 <html>
-	<head>
-		<title>Tweather report</title>
-		<link rel="stylesheet" href="/stylesheets/application.css" type="text/css" />
-		<!-- jquery -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-		<!-- maps API -->
-		<script type="text/javascript" 
-		        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgWZrPdvmGArSeMUwG4C4EnBAaE-UaL6Y&sensor=false">
+  <head>
+    <title>Tweather report</title>
+    <link rel="stylesheet" href="/stylesheets/application.css" type="text/css" />
+    <!-- jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <!-- maps API -->
+    <script type="text/javascript" 
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgWZrPdvmGArSeMUwG4C4EnBAaE-UaL6Y&sensor=false">
     </script>
-		<script type="text/javascript">
-			var map;
-			// put the map in place, with options given
-			function initialize() {
-	      var mapOptions = {
-	        center: new google.maps.LatLng(44.721735,-27.799806),
-	        zoom: 3,
-					disableDefaultUI: false,
-	        mapTypeId: google.maps.MapTypeId.SATELLITE,
-					panControl: false,
-				  zoomControl: true,
-				  mapTypeControl: false,
-				  scaleControl: false,
-				  streetViewControl: false,
-				  overviewMapControl: false
-	      };
-		    map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
-	    };
-			
-			// set infowindow outside of dropPin function so that only one exists, 
-			// and so only one is displayed at a time.
-			var infowindow = new google.maps.InfoWindow({
+    <script type="text/javascript">
+      var map;
+      // put the map in place, with options given
+      function initialize() {
+        var mapOptions = {
+          center: new google.maps.LatLng(44.721735,-27.799806),
+          zoom: 3,
+          disableDefaultUI: false,
+          mapTypeId: google.maps.MapTypeId.SATELLITE,
+          panControl: false,
+          zoomControl: true,
+          mapTypeControl: false,
+          scaleControl: false,
+          streetViewControl: false,
+          overviewMapControl: false
+        };
+        map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+      };
+      
+      // set infowindow outside of dropPin function so that only one exists, 
+      // and so only one is displayed at a time.
+      var infowindow = new google.maps.InfoWindow({
         content: ''
-			});
-			
-			// markers
-			function dropPin(lat,lang,id) {
-				var myLatlng = new google.maps.LatLng(lat,lang);
-				var marker = new google.maps.Marker({
-		      position: myLatlng,
-		      map: map,
-					animation: google.maps.Animation.DROP,
-		      title: id
-			  });
-			
-			  var myContent = document.getElementById(id);
-				
-				google.maps.event.addListener(marker, 'click', function() {
-					infowindow.setContent(myContent)
-					infowindow.open(map,marker);
-				});
-			};
+      });
+      
+      // markers
+      function dropPin(lat,lang,id) {
+        var myLatlng = new google.maps.LatLng(lat,lang);
+        var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          animation: google.maps.Animation.DROP,
+          title: id
+        });
+      
+        var myContent = document.getElementById(id);
+        
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent(myContent)
+          infowindow.open(map,marker);
+        });
+      };
     </script>
 
     <link href='http://fonts.googleapis.com/css?family=Sanchez:400italic,400' rel='stylesheet' type='text/css'>
-		
-	</head>
-	
-	<body onload="initialize()">
-		<div id="fixed">
-			<div id="splash">
-				<%= erb :description, :layout => false %>
-			</div>
-			<ul class="counts">
-			  <%= erb :counts, :layout => false %>
-			</ul>
-			<div id="map_canvas"></div>
-		</div>
-		<div id="footer">
-			<%= yield %>
-		</div>
-	</body>
+    
+  </head>
+  
+  <body onload="initialize()">
+    <div id="fixed">
+      <div id="splash">
+        <%= erb :description, :layout => false %>
+      </div>
+      <ul class="counts">
+        <%= erb :counts, :layout => false %>
+      </ul>
+      <div id="map_canvas"></div>
+    </div>
+    <div id="footer">
+      <%= yield %>
+    </div>
+  </body>
 </html>
