@@ -3,7 +3,7 @@
 	function refreshTweets() {
 	  $.get('/latest', {since: window.latestTweet}, function(data) {
 	    $('.tweets').prepend(data);
-	    $('.latest').slideDown('slow');
+	    $('.latest').show('slide', {direction: 'right'}, 20000);
 	    $('.tweets li:gt(50)').remove();
       
 	    setTimeout(refreshTweets, 1000);
