@@ -4,70 +4,70 @@
   * Palest background:   rgba(255, 255, 255, 0.08);
   * Hover background: rgba(30, 30, 36, 0.93);
   * Shadow inset: inset 1px 1px 0px rgba(0, 0, 0, 0.77);
-	
+  
 */
 
 html {
-	height: 100%;
+  height: 100%;
 }
 body {
-	height: 100%;
-	margin: 0;
-	padding: 0;
-	background: black;
-	color: white;
-	line-height: 1.3;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: black;
+  color: white;
+  line-height: 1.3;
 }
 h1, h2, h3, h4, h5, h6, p, ul, li { 
-	font-weight : normal;
+  font-weight : normal;
 }
 h1 {
-	margin: 0.2em 0 0.1em 0.3em;
+  margin: 0.2em 0 0.1em 0.3em;
   text-shadow: -1px -1px 0px #747474;
-	font-family: 'Sanchez', serif;
-	font-size: 3em;
-	font-style: italic;
-	font-weight: 400;
-	background: transparent;
+  font-family: 'Sanchez', serif;
+  font-size: 3em;
+  font-style: italic;
+  font-weight: 400;
+  background: transparent;
 }
 ul, p {
-	margin: 0;
+  margin: 0;
 }
 a {
-	color: #7F7FA2;
+  color: #7F7FA2;
 }
 
 /* Map Styles */
 
 /* This is simply a wrapper for the map, in which can't be given position fixed. */
 div#fixed {
-	height: 100%;
-	position: fixed;
-	top: 0;
-	width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 div#map_canvas {
-	top: 0;
-	height: 100%;
-	width: 100%;
-	color: #1B1B1B;
-	font-family: 'Helvetica Neue', sans-serif;
-	font-weight: 400;
-	text-shadow: none;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  color: #1B1B1B;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+  text-shadow: none;
 }
 div#map_canvas li {
-	padding: 0 0 0 0;
+  padding: 0 0 0 0;
 }
 
 /* Footer Styles */
 
 div#footer {
-	bottom: 0;
-	height: 10%;
-	position: fixed;
-	width: 100%;
-	background: rgba(30, 30, 36, 0.83);
-	color: white;
+  bottom: 0;
+  height: 10%;
+  position: fixed;
+  width: 100%;
+  background: rgba(30, 30, 36, 0.83);
+  color: white;
   display: none;
   padding: 1em 0 0 0;
 }
@@ -75,194 +75,194 @@ div#footer {
 /* Splash styles */
 
 div#splash {
-	position: absolute;
-	z-index: 3;
-	left: 50%;
+  position: absolute;
+  z-index: 3;
+  left: 50%;
   top: 19%;
   margin: 0 0 0 -25%;
-	padding: 1em 2em 2em;
-	width: 45%;
+  padding: 1em 2em 2em;
+  width: 45%;
   height: auto;
-	border-radius: 7px;
-	color: white;
-	font-family: 'Helvetica Neue', sans-serif;
-	background: rgba(30, 30, 36, 0.93);
+  border-radius: 7px;
+  color: white;
+  font-family: 'Helvetica Neue', sans-serif;
+  background: rgba(30, 30, 36, 0.93);
 }
 div#splash h1 {
-	margin: 0;
+  margin: 0;
 }
 div#splash a#hide {
-	position: absolute;
-	top: 3em;
-	right: 2em;
-	font-family: 'Sanchez', serif;
-	font-weight: 600;
-	color: white;
-	text-decoration: none;
-	font-size: 1em;
+  position: absolute;
+  top: 3em;
+  right: 2em;
+  font-family: 'Sanchez', serif;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
 }
 div#splash p.description {
-	margin: 1.2em 0 0 0;
-	font-weight: 300;
-	font-size: 1.2em;
+  margin: 1.2em 0 0 0;
+  font-weight: 300;
+  font-size: 1.2em;
 }
 
 /* Footer Description Styles */
 
 div#footer div.site-description {
-	bottom: 0;
-	height: 100%;
-	margin: 0 0 0 1em;
-	padding: 0 0 0 0;
-	position: absolute;
-	width: 30%;
-	border-radius: 3px;
-	font-family: 'Helvetica Neue', sans-serif;
-	overflow: hidden;
-	-webkit-transition: height 2s, background 3.5s;
-	-moz-transition: height 2s, background 3.5s;
-	transition: height 2s, background 3.5s;
+  bottom: 0;
+  height: 100%;
+  margin: 0 0 0 1em;
+  padding: 0 0 0 0;
+  position: absolute;
+  width: 30%;
+  border-radius: 3px;
+  font-family: 'Helvetica Neue', sans-serif;
+  overflow: hidden;
+  -webkit-transition: height 2s, background 3.5s;
+  -moz-transition: height 2s, background 3.5s;
+  transition: height 2s, background 3.5s;
 }
 div#footer div.site-description:hover {
-	height: 610%;
-	background: rgba(30, 30, 36, 0.93);
-	-webkit-transition: height 1s, background 0.2s;
-	-moz-transition: height 1s, background 0.2s;
-	transition: height 1s, background 0.2s;
+  height: 610%;
+  background: rgba(30, 30, 36, 0.93);
+  -webkit-transition: height 1s, background 0.2s;
+  -moz-transition: height 1s, background 0.2s;
+  transition: height 1s, background 0.2s;
 }
 div#footer div.site-description a#hide {
-	display: none;
+  display: none;
 }
 div#footer div.site-description p.description {
-	margin: 1.5em 1.5em 0 2em;
-	background: -1px -1px 0px #AFAFAF;
+  margin: 1.5em 1.5em 0 2em;
+  background: -1px -1px 0px #AFAFAF;
 }
 
 /* Tweet Counts Styles */
 
 ul.counts {
-	margin: 0 0 0 0;
-	padding: 0 0 0.5em 0.5em;
-	position: absolute;
-	right: 1em;
-	top: 1em;
-	width: 19em;
-	background: rgba(30, 30, 36, 0.83);
-	border-radius: 3px;
-	box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.77);
+  margin: 0 0 0 0;
+  padding: 0 0 0.5em 0.5em;
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  width: 19em;
+  background: rgba(30, 30, 36, 0.83);
+  border-radius: 3px;
+  box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.77);
   display: none;
-	list-style: none;
-	overflow: hidden;
-	-webkit-transition: height 2s, background 3.5s;
-	-moz-transition: height 2s, background 3.5s;
-	transition: height 2s, background 3.5s;
-	z-index: 1;
+  list-style: none;
+  overflow: hidden;
+  -webkit-transition: height 2s, background 3.5s;
+  -moz-transition: height 2s, background 3.5s;
+  transition: height 2s, background 3.5s;
+  z-index: 1;
 }
 /*ul.counts:hover {
-	height: 400%;
-	background: rgba(30, 30, 36, 0.93);
-	box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.77);
-	-webkit-transition: height 1s, background 0.2s;
-	-moz-transition: height 1s, background 0.2s;
-	transition: height 1s, background 0.2s;
+  height: 400%;
+  background: rgba(30, 30, 36, 0.93);
+  box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.77);
+  -webkit-transition: height 1s, background 0.2s;
+  -moz-transition: height 1s, background 0.2s;
+  transition: height 1s, background 0.2s;
 }*/
 li.count {
-	float: left;
-	margin: 0.8em 0 0.5em 0;
-	padding: 0 0 0 0;
-	width: 20em;
-	font-family: 'Sanchez', serif;
-	list-style: none;
+  float: left;
+  margin: 0.8em 0 0.5em 0;
+  padding: 0 0 0 0;
+  width: 20em;
+  font-family: 'Sanchez', serif;
+  list-style: none;
 }
 li.count p {
-	display: inline-block;
-	height: 0.5em;
-	margin: 0 1em 0 1em;
-	padding: 1em 0 1em 4em;
-	width: 3em;
+  display: inline-block;
+  height: 0.5em;
+  margin: 0 1em 0 1em;
+  padding: 1em 0 1em 4em;
+  width: 3em;
 }
 li.count p.uk {
-	/* Flag image adapted from https://www.gosquared.com/resources/flag-icons	*/
-	background-image: url('/images/United-Kingdom.png');
-	background-repeat: no-repeat;
+  /* Flag image adapted from https://www.gosquared.com/resources/flag-icons */
+  background-image: url('/images/United-Kingdom.png');
+  background-repeat: no-repeat;
 }
 li.count p.row {
-	background-image: url('/images/Lime.png');
-	background-repeat: no-repeat;
+  background-image: url('/images/Lime.png');
+  background-repeat: no-repeat;
 }
 li.count p.ratio {
-	font-weight: 600;
+  font-weight: 600;
 }
 li.count p.label {
-	height: 1em;
-	padding: 0 0 0 0.5em;
-	width: 21em;
-	font-size: 0.8em;
+  height: 1em;
+  padding: 0 0 0 0.5em;
+  width: 21em;
+  font-size: 0.8em;
 }
 
 /* Footer Tweet List Styles */
 
 ul.tweets {
-	bottom: 0;
-	display: block;
-	height: 100%;
-	margin: 1em 0 0 29em;
-	padding: 0 2em 0 1em;
-	position: absolute;
-	white-space: nowrap;
-	width: 100%;
-	list-style: none;
-	overflow: auto;
+  bottom: 0;
+  display: block;
+  height: 100%;
+  margin: 1em 0 0 29em;
+  padding: 0 2em 0 1em;
+  position: absolute;
+  white-space: nowrap;
+  width: 100%;
+  list-style: none;
+  overflow: auto;
 }
 
 /* Tweet Styles */
 
 li.tweet {
-	display: inline-block;
-	height:: 100%;
-	margin: 1em 2em 0 0;
-	padding: 0 0 0 0;
-	width: 35em;
-	list-style: none;
+  display: inline-block;
+  height:: 100%;
+  margin: 1em 2em 0 0;
+  padding: 0 0 0 0;
+  width: 35em;
+  list-style: none;
 }
 p.text {
-	display: inline;
-	float: left;
-	height: 3.7em;
-	margin: 0;
-	padding: 0.3em 0em 0.3em 0.8em;
-	white-space: normal;
-	width: 25em;
-	background: rgba(0, 0, 0, 0.25);
-	border-radius: 3px;
-	box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.77), 1px 1px 1px rgba(255, 255, 255, 0.05);	
-	font-family: 'Helvetica Neue', sans-serif;
-	text-shadow: none;
-	font-weight: 400;
+  display: inline;
+  float: left;
+  height: 3.7em;
+  margin: 0;
+  padding: 0.3em 0em 0.3em 0.8em;
+  white-space: normal;
+  width: 25em;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.77), 1px 1px 1px rgba(255, 255, 255, 0.05); 
+  font-family: 'Helvetica Neue', sans-serif;
+  text-shadow: none;
+  font-weight: 400;
 }
 div.details {
-	float: right;
-	padding: 1em 0 0 0;
-	width: 5em;
-	font-family: 'Helvetica Neue', sans-serif;
+  float: right;
+  padding: 1em 0 0 0;
+  width: 5em;
+  font-family: 'Helvetica Neue', sans-serif;
   font-size: 0.7em;
-	font-weight: 400;
-	text-shadow: none;
+  font-weight: 400;
+  text-shadow: none;
 }
 img.avatar {
-	float: left;
-	/* Pixel measurement below so the image lines up with text */
-	margin: 4px 1em 0 0; 
-	vertical-align: middle;
+  float: left;
+  /* Pixel measurement below so the image lines up with text */
+  margin: 4px 1em 0 0; 
+  vertical-align: middle;
 }
 
 /* infoWindow Styles */
 
 div#map_canvas div.details {
-	position: absolute;
-	right: 1em;
+  position: absolute;
+  right: 1em;
 }
 div#map_canvas p.text {
-	background: rgba(93, 112, 189, 0.25);
-	box-shadow: inset 1px 1px 0px rgba(145, 145, 145, 0.77);
+  background: rgba(93, 112, 189, 0.25);
+  box-shadow: inset 1px 1px 0px rgba(145, 145, 145, 0.77);
 }
