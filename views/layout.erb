@@ -8,7 +8,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <!-- maps API -->
     <script type="text/javascript" 
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgWZrPdvmGArSeMUwG4C4EnBAaE-UaL6Y&sensor=false">
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgWZrPdvmGArSeMUwG4C4EnBAaE-UaL6Y&sensor=false&libraries=visualization">
     </script>
     <script type="text/javascript">
       var map;
@@ -18,7 +18,7 @@
           center: new google.maps.LatLng(54.235136,0.526367),
           zoom: 6,
           disableDefaultUI: false,
-          mapTypeId: google.maps.MapTypeId.SATELLITE,
+          mapTypeId: google.maps.MapTypeId.TERRAIN,
           panControl: false,
           zoomControl: true,
           mapTypeControl: false,
@@ -35,14 +35,21 @@
         content: ''
       });
       
+      var heatmapData = [];
+      var heatmap = new google.maps.visualization.HeatmapLayer({
+        data: heatmapData
+      });
       // markers
       function dropPin(lat,lang,id) {
         var myLatlng = new google.maps.LatLng(lat,lang);
+        var image = 'images/umbrella-2.png'
+
         var marker = new google.maps.Marker({
           position: myLatlng,
           map: map,
           animation: google.maps.Animation.DROP,
-          title: id
+          title: id,
+          icon: image
         });
       
         var myContent = document.getElementById(id);
@@ -51,6 +58,12 @@
           infowindow.setContent(myContent)
           infowindow.open(map,marker);
         });
+
+        /* Data points defined as an array of LatLng objects */
+        heatmapData.push(new google.maps.LatLng(lat, lang));
+
+        heatmap.setMap(map);
+        heatmap.setOptions({radius: 10, opacity: 0.6});
       };
     </script>
 
